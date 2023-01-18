@@ -16,7 +16,7 @@ export default () => {
     plugins: [
       vue(),
         electron({
-          entry: "src/background.js"
+          entry: "index.ts",
         }),
       viteSvgIcons({
         iconDirs: [path.resolve(process.cwd(), 'src/icons')],
