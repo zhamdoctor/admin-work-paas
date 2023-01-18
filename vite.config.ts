@@ -6,12 +6,18 @@ import ViteComponents from 'unplugin-vue-components/vite'
 import { NaiveUiResolver } from 'unplugin-vue-components/resolvers'
 
 import vueJsx from '@vitejs/plugin-vue-jsx'
+import electron from "vite-plugin-electron";
+import { defineConfig } from 'vite'
 
 export default () => {
+  // @ts-ignore
   return {
     base: '/',
     plugins: [
       vue(),
+        electron({
+          entry: "src/background.js"
+        }),
       viteSvgIcons({
         iconDirs: [path.resolve(process.cwd(), 'src/icons')],
         symbolId: 'icon-[dir]-[name]',

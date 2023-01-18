@@ -327,6 +327,20 @@ export const adminRoutes = [
       },
     ],
   },
+  { //k8s pod paas功能
+    menuUrl: '/paas',
+    menuName: 'paas能力',
+    iconPrefix: 'iconfont',
+    icon: 'detail',
+    isSingle: true,
+    children: [
+      {
+        parentPath: '/paas',
+        menuUrl: '/paas/podList',
+        menuName: 'pod列表',
+      },
+    ],
+  },
 ]
 export const editorRoutes = [
   {

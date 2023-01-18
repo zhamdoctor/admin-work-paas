@@ -1,20 +1,28 @@
 {
-  "name": "admin-work",
+  "name": "electron-work",
   "version": "2.1.5",
   "scripts": {
-    "dev": "vite --host",
-    "staging": "vite build  --mode staging",
+    "serve": "vite preview",
     "build": "vite build",
-    "tsc": "vue-tsc --noEmit",
-    "serve": "vite preview"
+    "dev": "vite --host",
+    "electron:build": "vue-cli-service electron:build",
+    "electron:serve": "vue-cli-service electron:serve",
+    "postinstall": "electron-builder install-app-deps",
+    "postuninstall": "electron-builder install-app-deps",
+    "staging": "vite build  --mode staging",
+    "tsc": "vue-tsc --noEmit"
   },
+  "main": "/dist/admin-work/background.js",
   "dependencies": {
+    "@vue/cli-service": "^5.0.8",
     "@vueuse/core": "^8.5.0",
     "axios": "^0.21.1",
     "clipboard": "^2.0.8",
     "echarts": "^5.1.2",
+    "electron": "^22.0.2",
     "lodash-es": "^4.17.21",
     "mockjs": "^1.1.0",
+    "nrm": "^1.2.5",
     "path-browserify": "^1.0.1",
     "pinia": "^2.0.14",
     "print-js": "^1.6.0",
@@ -41,8 +49,10 @@
     "@vicons/ionicons5": "^0.10.0",
     "@vitejs/plugin-vue": "^3.1.2",
     "@vitejs/plugin-vue-jsx": "^1.3.8",
-    "@vue/compiler-sfc": "^3.0.5",
+    "@vue/compiler-sfc": "^3.2.45",
     "autoprefixer": "^10.4.7",
+    "electron-chromedriver": "^22.0.0",
+    "electron-devtools-installer": "^3.1.0",
     "eslint": "^7.30.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-define-config": "^1.0.9",
@@ -60,7 +70,10 @@
     "vfonts": "^0.1.0",
     "vite": "^3.1.8",
     "vite-plugin-compression": "^0.5.1",
+    "vite-plugin-electron": "^0.11.1",
     "vite-plugin-svg-icons": "^1.0.1",
+    "vue": "^3.2.45",
+    "vue-cli-plugin-electron-builder": "~2.1.1",
     "vue-tsc": "^0.3.0"
   }
 }

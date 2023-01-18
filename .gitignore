@@ -5,3 +5,7 @@ dist-ssr
 /dist
 dist
 package-lock.json
+#Electron-builder output
+/dist_electron
+*.vscode
+*.iml
